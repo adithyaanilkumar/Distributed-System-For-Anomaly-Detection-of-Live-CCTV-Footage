@@ -13,6 +13,7 @@ import Config as Config
 # Encoder
 def get_model(re=Config.RELOAD_MODEL):
     cache = shelve.open(Config.CACHE_PATH + "model")
+    print(cache)
     if not re:
         return cache["model"]
     images = DataProvider.get_dataset(Config.RELOAD_DATASET)
